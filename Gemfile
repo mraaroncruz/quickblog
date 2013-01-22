@@ -52,7 +52,8 @@ group :test do
 end
 
 gem "devise"
-gem "sqlite3"
+gem "sqlite3", :group => [:development, :test]
+gem 'pg', group: :production
 gem "slim-rails"
 gem "bootstrap-sass"
 gem "rails_bootstrap_helpers"
