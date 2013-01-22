@@ -1,0 +1,7 @@
+= form_for @comment do |f|
+  legend Add a comment
+  = hidden_field_tag "article_id", @article.id
+  = f.text_area :body
+
+  div
+    = f.submit "Submit", class: "btn"

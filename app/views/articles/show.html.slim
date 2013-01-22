@@ -1,0 +1,13 @@
+h1= @article.title
+p
+  | by 
+  strong= @article.author.email
+  |  on 
+  strong= @article.published_on
+= @article.body
+
+.comments
+  - if @article.comments.any?
+    h4= comments
+    = render partial: "articles/comment", collection: @article.comments
+  = render "articles/comment_form"

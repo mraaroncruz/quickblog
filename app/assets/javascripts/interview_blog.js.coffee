@@ -3,7 +3,7 @@ window.InterviewBlog =
   Collections: {}
   Views: {}
   Routers: {}
-  initialize: -> alert 'Hello from Backbone!'
+  initialize: ->
 
 $(document).ready ->
   InterviewBlog.initialize()

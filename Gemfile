@@ -22,27 +22,43 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
+#
+group :test do
+  gem 'steak'
+  gem 'rb-fsevent', '~> 0.9.1'
+  gem 'spork', '~> 1.0rc'
+  gem 'launchy'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'growl'
+  gem 'faker'
+  gem 'guard-spork'
+  gem 'guard-rspec'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+end
 
 gem "devise"
 gem "sqlite3"
-gem "rspec-rails", "~> 2.8", :group => [:development]
-gem "factory_girl_rails", "~> 1.2", :group => [:development, :test]
 gem "slim-rails"
 gem "bootstrap-sass"
 gem "rails_bootstrap_helpers"
 gem "pry-rails", :group => :development
 gem "pry-nav", :group => :development
 gem "backbone-on-rails"
+
+
+gem 'jquery-ui-rails'

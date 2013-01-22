@@ -11,7 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130122203927) do
+ActiveRecord::Schema.define(:version => 20130122222417) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "published_on"
+    t.integer  "views"
+    t.text     "blurb"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "articles", ["user_id"], :name => "index_articles_on_user_id"
+
+  create_table "comments", :force => true do |t|
+    t.integer  "article_id"
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "comments", ["article_id"], :name => "index_comments_on_article_id"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -26,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20130122203927) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

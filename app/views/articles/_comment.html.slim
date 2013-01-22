@@ -1,0 +1,7 @@
+.comment
+  p
+    | from 
+    strong= comment.user.email
+    |  on 
+    strong= comment.created_at
+  = comment.body
