@@ -7,7 +7,15 @@ p
 = @article.body
 
 .comments
-  - if @article.comments.any?
-    h4= comments
-    = render partial: "articles/comment", collection: @article.comments
+  - if user_signed_in?
+    - if @article.comments.any?
+      h4 comments
+      = render partial: "articles/comment", collection: @article.comments
+  - else
+    
+    h5 
+      = link_to "Sign in", new_user_session_path
+      |  or 
+      = link_to "Sign up", new_user_registration_path
+      |  to leave a comment
   = render "articles/comment_form"
