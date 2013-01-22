@@ -6,8 +6,8 @@ h3 Latest Articles
     th Title
     th
     th
-  tr
-    - @latest_articles.each do |article|
+  - @latest_articles.each do |article|
+    tr
       td= link_to article.title, article
       td= link_to "edit", edit_admin_article_path(article)
       td= link_to "delete", admin_article_path(article), method: "delete"
