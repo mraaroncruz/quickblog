@@ -1,2 +1,2 @@
 jQuery ->
-  $('.datepicker').datepicker()
+  $('.datepicker').datepicker(dateFormat: "D, M dd yy")

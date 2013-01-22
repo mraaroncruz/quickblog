@@ -45,6 +45,7 @@ class Admin::ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+
         format.html { redirect_to [:admin, @article], notice: 'Article was successfully created.' }
         format.json { render json: @article, status: :created, location: @article }
       else
